@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𐒔𐒙𐒇𐒈𐒜𐒆-𐒢 Newspaper</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF0000',
+                        secondary: '#000000'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Ku xaqiijinta Remix Icons-ka (haddii uu dhib jiro) */
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f4f6;
+        }
+        
+        /* Animation Keyframes for Mobile Menu */
+        @keyframes slideRight {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        
+        @keyframes slideLeft {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+        
+        .animate-slide-right {
+            animation: slideRight 0.3s ease forwards;
+        }
+        
+        .animate-slide-left {
+            animation: slideLeft 0.3s ease forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-primary shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="w-10 h-10 flex items-center justify-center text-white cursor-pointer menu-toggle">
+                    <i class="ri-menu-line ri-lg"></i>
+                </div>
+                
+                <div class="flex items-center justify-center space-x-2">
+                    <h1 class="text-3xl font-['Pacifico'] text-white" id="header-title">
+                        <span class="osmanya-text" data-latin="HORSEED-SO">𐒔𐒙𐒇𐒈𐒜𐒆-𐒢</span>
+                    </h1>
+                    <button id="script-toggle" class="bg-red-700 text-white text-xs font-bold px-2 py-1 rounded-full hover:bg-red-800 transition">
+                        Laatiin
+                    </button>
+                </div>
+                
+                <div class="w-10 h-10 flex items-center justify-center text-white cursor-pointer search-toggle">
+                    <i class="ri-search-line ri-lg"></i>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="bg-primary border-t border-red-700 hidden md:block">
+            <div class="container mx-auto px-4 py-2">
+                <ul class="flex items-center justify-center space-x-6 overflow-x-auto whitespace-nowrap">
+                    <li><a href="#" class="text-white font-medium hover:text-red-200 transition">
+                        <span class="osmanya-text" data-latin="Warka">𐒓𐒖𐒇𐒖𐒇𐒏𐒖</span></a>
+                    </li>
+                    <li><a href="#" class="text-white font-medium hover:text-red-200 transition">
+                        <span class="osmanya-text" data-latin="Caafimaadka">𐒋𐒘𐒕𐒛𐒇𐒖𐒔𐒖</span></a>
+                    </li>
+                    <li><a href="#" class="text-white font-medium hover:text-red-200 transition">
+                        <span class="osmanya-text" data-latin="Dhaqaalaha">𐒊𐒖𐒎𐒛𐒐𐒖𐒔𐒖</span></a>
+                    </li>
+                    <li><a href="#" class="text-white font-medium hover:text-red-200 transition">
+                        <span class="osmanya-text" data-latin="Sportiga">𐒁𐒙𐒇𐒖𐒔𐒖</span></a>
+                    </li>
+                    <li><a href="#" class="text-white font-medium hover:text-red-200 transition">
+                        <span class="osmanya-text" data-latin="Tignoolajiyadda">𐒂𐒗𐒏𐒒𐒙𐒐𐒙𐒃𐒘𐒕𐒖𐒆𐒆𐒖</span></a>
+                    </li>
+                    <li><a href="#" class="text-white font-medium hover:text-red-200 transition">
+                        <span class="osmanya-text" data-latin="Bulshada">𐒁𐒚𐒐𐒉𐒖𐒆𐒖</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <div class="lg:w-2/3">
+                
+                <div class="bg-white rounded shadow-md mb-8 overflow-hidden">
+                    <div class="relative">
+                        <img src="https://readdy.ai/api/search-image?query=Somali%20political%20leaders%20meeting%20in%20a%20conference%20room%2C%20discussing%20important%20national%20issues.%20Professional%20setting%20with%20Somali%20flags%20visible.%20Modern%20conference%20table%20with%20microphones.%20Serious%20expressions%20on%20faces.%20Natural%20lighting%20from%20large%20windows.%20Business%20attire.&width=800&height=450&seq=1&orientation=landscape" 
+                             alt="Madaxweynaha Somalia oo kulan la qaatay madaxda kale" 
+                             class="w-full h-[350px] md:h-[450px] object-cover object-top">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                            <span class="inline-block bg-primary text-white text-xs font-semibold px-2 py-1 rounded mb-2 osmanya-text" data-latin="Siyaasadda">𐒈𐒘𐒕𐒛𐒈𐒖𐒆𐒆𐒖</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white leading-tight">
+                                <span class="osmanya-text" data-latin="Madaxweynaha Soomaaliya oo kulan la qaatay madaxda dalalka deriska">𐒑𐒖𐒆𐒖𐒄𐒓𐒗𐒕𐒒𐒖𐒔𐒖 𐒈𐒝𐒑𐒛𐒐𐒘𐒕𐒖 𐒝 𐒏𐒚𐒐𐒖𐒒 𐒐𐒖 𐒎𐒛𐒂𐒖𐒕 𐒑𐒖𐒆𐒖𐒄𐒆𐒖 𐒆𐒖𐒐𐒖𐒐𐒏𐒖 𐒆𐒖𐒇𐒘𐒈𐒏𐒖</span>
+                            </h2>
+                            <p class="text-gray-200 mt-2 text-sm">
+                                <span class="osmanya-text" data-latin="11 May, 2024 | Banadir">𐒢𐒢 𐒑𐒛𐒃𐒙, 𐒢𐒠𐒢𐒥 | 𐒁𐒖𐒒𐒖𐒆𐒘𐒇</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-700 mb-4">
+                            <span class="osmanya-text" data-latin="Madaxweynaha Jamhuuriyadda Federaalka Soomaaliya, Xasan Sheekh Maxamuud, ayaa maanta kulan muhiim ah la qaatay madaxda dalalka deriska ah.">𐒑𐒖𐒆𐒖𐒄𐒓𐒗𐒕𐒒𐒖𐒔𐒖 𐒃𐒖𐒑𐒔𐒓𐒇𐒘𐒕𐒖𐒆𐒆𐒖 𐒍𐒗𐒆𐒗𐒇𐒛𐒐𐒏𐒖 𐒈𐒝𐒑𐒛𐒐𐒘𐒕𐒖, 𐒄𐒖𐒈𐒖𐒒 𐒉𐒜𐒅 𐒑𐒖𐒄𐒖𐒑𐒓𐒆, 𐒖𐒕𐒛 𐒑𐒛𐒒𐒂𐒖 𐒏𐒚𐒐𐒖𐒒 𐒑𐒚𐒔𐒕𐒑 𐒖𐒔 𐒐𐒖 𐒎𐒛𐒂𐒖𐒕 𐒑𐒖𐒆𐒖𐒄𐒆𐒖 𐒆𐒖𐒐𐒖𐒐𐒏𐒖 𐒆𐒗𐒇𐒘𐒈𐒏𐒖 𐒖𐒔.</span>
+                        </p>
+                        <a href="#" class="text-primary font-semibold hover:text-red-700 transition flex items-center">
+                            <span class="osmanya-text" data-latin="Sii Akhri">𐒈𐒕 𐒖𐒅𐒇𐒘</span>
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-6 text-gray-800 border-b-2 border-primary pb-2">
+                    <span class="osmanya-text" data-latin="Warar Kale">𐒓𐒖𐒇𐒖𐒇𐒏𐒖 𐒏𐒖𐒐𐒗</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded shadow-sm overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Somali+youth+entrepreneurs+working+on+a+tech+project+in+Mogadishu%2C+modern+office+setting%2C+laptops+and+whiteboard.&width=400&height=250&seq=2" 
+                             alt="Technology News" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <span class="inline-block bg-secondary text-white text-xs font-semibold px-2 py-1 rounded mb-2 osmanya-text" data-latin="Tignoolajiyadda">𐒂𐒗𐒏𐒒𐒙𐒐𐒙𐒃𐒘𐒕𐒖𐒆𐒆𐒖</span>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">
+                                <span class="osmanya-text" data-latin="Xaladaha Kacaya ee is la Soomaaliya Maxamuud uu Xakaysan">𐒄𐒖𐒐𐒖𐒑𐒖𐒆𐒖𐒔𐒖 𐒏𐒖𐒓𐒖𐒅𐒖𐒈𐒜 𐒝 𐒘𐒈 𐒐𐒖 𐒈𐒝𐒑𐒛𐒐𐒘𐒕𐒖 𐒑𐒖𐒄𐒖𐒑𐒓𐒆 𐒝 𐒄𐒖𐒕𐒈𐒛𐒕</span>
+                            </h4>
+                            <p class="text-gray-600 text-sm">
+                                <span class="osmanya-text" data-latin="Maanta 2024 | 2024">𐒑𐒖𐒖𐒒𐒂𐒖 𐒢𐒠𐒢𐒥 | 𐒢𐒠𐒢𐒥</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded shadow-sm overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Somali+woman+doctor+in+a+hospital%2C+wearing+scrubs+and+stethoscope%2C+smiling+and+professional.&width=400&height=250&seq=3" 
+                             alt="Health News" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <span class="inline-block bg-green-600 text-white text-xs font-semibold px-2 py-1 rounded mb-2 osmanya-text" data-latin="Caafimaadka">𐒋𐒘𐒕𐒛𐒇𐒖𐒔𐒖</span>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">
+                                <span class="osmanya-text" data-latin="Dhakhtaradaha Soomaaliya ay madaxda sooda ku baahayaan maanta">𐒆𐒙𐒏𐒂𐒙𐒇𐒖𐒆𐒆𐒖 𐒈𐒝𐒑𐒛𐒐𐒘𐒕𐒖 𐒖𐒕 𐒑𐒖𐒆𐒖𐒄𐒆𐒖 𐒈𐒙𐒙𐒆𐒖 𐒏𐒚 𐒁𐒖𐒄𐒛𐒖𐒒 𐒑𐒖𐒖𐒒𐒂𐒖</span>
+                            </h4>
+                            <p class="text-gray-600 text-sm">
+                                <span class="osmanya-text" data-latin="11 May, 2024 | Muqdisho">𐒢𐒢 𐒑𐒛𐒃𐒙, 𐒢𐒠𐒢𐒥 | 𐒑𐒚𐒏𐒆𐒘𐒉𐒙</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="lg:w-1/3">
+                
+                <div class="bg-white rounded shadow-md mb-8 p-6">
+                    <h3 class="text-xl font-bold mb-4 text-gray-800 border-b border-primary pb-2 flex items-center">
+                        <i class="ri-fire-fill text-primary mr-2"></i>
+                        <span class="osmanya-text" data-latin="Wararka Degdegga Ah">𐒓𐒖𐒇𐒖𐒇𐒏𐒖 𐒆𐒗𐒌𐒆𐒗𐒌𐒌𐒖 𐒖𐒔</span>
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="pb-4 border-b border-gray-100">
+                            <span class="text-xs font-semibold text-primary block mb-1">10:30 AM</span>
+                            <a href="#" class="text-gray-800 font-medium hover:text-primary transition">
+                                <span class="osmanya-text" data-latin="Raysal Wasaaraha oo buuqday ku tegey gobolka">𐒇𐒖𐒕𐒈𐒖𐒐 𐒓𐒖𐒈𐒛𐒇𐒖𐒔𐒖 𐒝 𐒁𐒝𐒎𐒖𐒉𐒙 𐒏𐒚 𐒂𐒗𐒌𐒖𐒕 𐒌𐒙𐒁𐒙𐒐𐒏𐒖</span>
+                            </a>
+                        </li>
+                        <li class="pb-4 border-b border-gray-100">
+                            <span class="text-xs font-semibold text-primary block mb-1">09:00 AM</span>
+                            <a href="#" class="text-gray-800 font-medium hover:text-primary transition">
+                                <span class="osmanya-text" data-latin="Dhaqaalaha iyo degdegadda uu baahaya maanta uu xaysays">𐒊𐒖𐒎𐒛𐒐𐒖𐒔𐒖 𐒝 𐒆𐒗𐒌𐒖𐒆𐒆𐒖 𐒝 𐒓𐒛 𐒑𐒖𐒖𐒒𐒂𐒖 𐒝 𐒄𐒖𐒕𐒈𐒖𐒕𐒈</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded shadow-md mb-8 p-6">
+                    <h3 class="text-xl font-bold mb-4 text-gray-800 border-b border-primary pb-2 flex items-center">
+                        <i class="ri-star-fill text-primary mr-2"></i>
+                        <span class="osmanya-text" data-latin="Ugu Akhriska Badnaa">𐒚𐒌𐒚 𐒖𐒅𐒇𐒘𐒈𐒏𐒖 𐒁𐒖𐒆𐒖𐒒</span>
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 pb-4 border-b border-gray-100">
+                            <span class="text-xl font-bold text-primary">1</span>
+                            <a href="#" class="text-gray-800 hover:text-primary transition">
+                                <span class="osmanya-text" data-latin="Diblomaasiyadda uu beegtay in ay xejis la gabay shirkaad">𐒆𐒙𐒓𐒐𐒖𐒆𐒆𐒖 𐒝 𐒉𐒜𐒌𐒂𐒖𐒕 𐒘𐒒 𐒖𐒕 𐒔𐒗𐒉𐒕𐒈 𐒐𐒖 𐒌𐒖𐒉𐒖𐒕 𐒉𐒘𐒇𐒏𐒖𐒆</span>
+                            </a>
+                        </li>
+                        <li class="flex gap-3 pb-4 border-b border-gray-100">
+                            <span class="text-xl font-bold text-primary">2</span>
+                            <a href="#" class="text-gray-800 hover:text-primary transition">
+                                <span class="osmanya-text" data-latin="Sportiga uu dalalka saamiyaadda ayuu maanta uu xaysay">𐒁𐒙𐒇𐒖𐒔𐒖 𐒝 𐒆𐒖𐒐𐒖𐒐𐒏𐒖 𐒈𐒖𐒖𐒑𐒘𐒕𐒖𐒆𐒆𐒖 𐒖𐒕𐒛 𐒑𐒛𐒒𐒂𐒖 𐒝 𐒄𐒖𐒕𐒈𐒖𐒕</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-primary/5 rounded shadow-md mb-8 p-4 text-center border-l-4 border-primary">
+                    <p class="text-sm text-gray-500 mb-2 font-semibold">
+                        <span class="osmanya-text" data-latin="Xayeysiis">𐒄𐒖𐒕𐒗𐒈𐒕𐒈</span>
+                    </p>
+                    <h4 class="text-xl font-bold text-primary mb-2">
+                        <span class="osmanya-text" data-latin="Ku biir barnaamijka waxbarashada ee jaamacadadda">𐒏𐒚 𐒁𐒕𐒇 𐒁𐒖𐒇𐒒𐒛𐒑𐒘𐒃𐒏𐒖 𐒓𐒖𐒄𐒁𐒖𐒇𐒖𐒉𐒖𐒆𐒖 𐒜 𐒃𐒛𐒑𐒖𐒋𐒖𐒆𐒆𐒖</span>
+                    </h4>
+                    <p class="text-gray-600 mb-4">
+                        <span class="osmanya-text" data-latin="Is diiwaangali maanta oo hel qiimo gaar ah.">𐒘𐒈 𐒆𐒕𐒒𐒓𐒛𐒒𐒌𐒖𐒐𐒘 𐒑𐒖𐒖𐒒𐒂𐒖 𐒝 𐒔𐒗𐒐 𐒎𐒕𐒑𐒙 𐒌𐒛𐒇 𐒖𐒔.</span>
+                    </p>
+                    <button class="bg-primary text-white text-sm px-4 py-2 rounded-button hover:bg-red-700 transition"> 
+                        <span class="osmanya-text" data-latin="Faa'fahin dheerad ah">𐒍𐒛𐒔𐒍𐒛𐒔𐒘𐒒 𐒊𐒜𐒇𐒖𐒆 𐒖𐒔</span>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer class="bg-primary text-white mt-12">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div>
+                    <h4 class="text-3xl font-['Pacifico'] mb-4">
+                        <span class="osmanya-text" data-latin="HORSEED">𐒔𐒙𐒇𐒈𐒜𐒆</span>
+                    </h4>
+                    <p class="text-white/70 mb-4 text-sm">
+                        <span class="osmanya-text" data-latin="Horseed waa Wargeyska ugu weyn Soomaaliya.">𐒔𐒙𐒇𐒈𐒜𐒆 𐒓𐒛 𐒓𐒖𐒇𐒈𐒘𐒆𐒖𐒔𐒖 𐒚𐒌𐒚 𐒓𐒗𐒕𐒒 𐒈𐒝𐒑𐒛𐒐𐒘𐒕𐒖.</span>
+                    </p>
+                    <div class="flex space-x-3 text-2xl">
+                        <i class="ri-facebook-box-fill hover:text-white/80 cursor-pointer transition"></i>
+                        <i class="ri-twitter-fill hover:text-white/80 cursor-pointer transition"></i>
+                        <i class="ri-instagram-fill hover:text-white/80 cursor-pointer transition"></i>
+                        <i class="ri-whatsapp-fill hover:text-white/80 cursor-pointer transition"></i>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-white/20 pb-2">
+                        <span class="osmanya-text" data-latin="Meelaha Degdegga">𐒓𐒗𐒕𐒁𐒖𐒔𐒖 𐒆𐒗𐒌𐒆𐒗𐒌𐒌𐒖</span>
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="text-white/70 hover:text-white transition">
+                            <span class="osmanya-text" data-latin="Warka">𐒓𐒖𐒇𐒖𐒇𐒏𐒖</span></a>
+                        </li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition">
+                            <span class="osmanya-text" data-latin="Caafimaadka">𐒋𐒘𐒕𐒛𐒇𐒖𐒔𐒖</span></a>
+                        </li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition">
+                            <span class="osmanya-text" data-latin="Dhaqaalaha">𐒊𐒖𐒎𐒛𐒐𐒖𐒔𐒖</span></a>
+                        </li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition">
+                            <span class="osmanya-text" data-latin="Bulshada">𐒁𐒚𐒐𐒉𐒖𐒆𐒖</span></a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-white/20 pb-2">
+                        <span class="osmanya-text" data-latin="Xogta Biraha">𐒄𐒙𐒌𐒂𐒖 𐒉𐒘𐒇𐒏𐒖𐒆𐒖</span>
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="text-white/70 hover:text-white transition">
+                            <span class="osmanya-text" data-latin="Siyaasadda">𐒈𐒘𐒕𐒛𐒈𐒖𐒆𐒆𐒖</span></a>
+                        </li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition">
+                            <span class="osmanya-text" data-latin="Sportiga">𐒁𐒙𐒇𐒖𐒔𐒖</span></a>
+                        </li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition">
+                            <span class="osmanya-text" data-latin="Tignoolajiyadda">𐒂𐒗𐒏𐒒𐒙𐒐𐒙𐒃𐒘𐒕𐒖𐒆𐒆𐒖</span></a>
+                        </li>
+                        <li><a href="#" class="text-white/70 hover:text-white transition">
+                            <span class="osmanya-text" data-latin="Kabaysadda">𐒏𐒖𐒁𐒖𐒕𐒈𐒖𐒆𐒆𐒖</span></a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-white/20 pb-2">
+                        <span class="osmanya-text" data-latin="Nala Soo Xiriir">𐒒𐒖𐒐𐒖 𐒈𐒝 𐒄𐒘𐒇𐒘𐒇</span>
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line mr-2 mt-1"></i>
+                            <span class="text-white/70">
+                                <span class="osmanya-text" data-latin="Waddada Makka Al-Mukarrama, Muqdisho, Soomaaliya">𐒓𐒖𐒆𐒖𐒆 𐒑𐒖𐒏𐒏𐒖 𐒖𐒐-𐒑𐒚𐒏𐒖𐒇𐒖𐒑𐒖, 𐒑𐒚𐒎𐒆𐒘𐒉𐒙, 𐒈𐒝𐒑𐒛𐒐𐒘𐒕𐒖</span>
+                            </span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-phone-line mr-2"></i>
+                            <span class="text-white/70">+𐒢𐒠𐒠 𐒖𐒠 𐒠𐒠𐒠 𐒠𐒠𐒠</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ri-mail-line mr-2"></i>
+                            <span class="text-white/70">info@horsed.so</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 mt-8 pt-8 text-center">
+                <p class="text-white/70 text-sm">
+                    <span class="osmanya-text" data-latin="&copy; 2024 Horseed Newspaper. Xuquuqda way xifdisan tahay.">&copy; 𐒢𐒠𐒢𐒥 𐒔𐒙𐒇𐒈𐒜𐒆 Newspaper. 𐒊𐒖𐒑𐒑𐒛𐒒 𐒄𐒚𐒎𐒚𐒎𐒆𐒚 𐒓𐒛 𐒊𐒙𐒓𐒇𐒖𐒒 𐒂𐒖𐒔𐒖𐒕.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // *** QAABKA QORAALKA BEDDELIDDA (SCRIPT TOGGLE) ***
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.getElementById('script-toggle');
+            const textElements = document.querySelectorAll('.osmanya-text');
+            let isOsmanya = true; // Heerka bilowga
+
+            // Shaqada lagu beddelayo qoraalka
+            function toggleScript() {
+                isOsmanya = !isOsmanya;
+
+                textElements.forEach(el => {
+                    const latinText = el.getAttribute('data-latin');
+                    const currentText = el.textContent.trim();
+                    const originalOsmanya = el.getAttribute('data-osmanya') || currentText;
+
+                    // U kaydi qoraalka Osmanya asalka ah mar keliya
+                    if (!el.hasAttribute('data-osmanya')) {
+                        el.setAttribute('data-osmanya', currentText);
+                    }
+
+                    if (isOsmanya) {
+                        el.textContent = originalOsmanya;
+                    } else {
+                        el.textContent = latinText;
+                    }
+                });
+
+                // Beddel magaca batoonka
+                toggleButton.textContent = isOsmanya ? 'Laatiin' : '𐒑𐒚𐒈𐒗 𐒈𐒝'; 
+            }
+
+            // Ku dheji shaqada batoonka
+            toggleButton.addEventListener('click', toggleScript);
+
+
+            // *** SEARCH TOGGLE ***
+            const searchIcon = document.querySelector('.search-toggle');
+            let searchOpen = false;
+            let searchBar = null;
+
+            function createSearchBar() {
+                searchBar = document.createElement('div');
+                searchBar.className = 'fixed inset-0 bg-black/50 z-[60] flex justify-center p-4 pt-20 transition-opacity duration-300 opacity-0 backdrop-blur-sm';
+                searchBar.innerHTML = `
+                    <div class="w-full max-w-lg bg-white rounded-lg shadow-2xl overflow-hidden animate-fade-in">
+                        <div class="flex items-center p-4 border-b border-gray-200">
+                            <input type="text" placeholder="${isOsmanya ? '𐒏𐒖 𐒇𐒖𐒖𐒆𐒕 𐒓𐒖𐒇𐒖𐒇𐒏𐒖...' : 'Ku raadi warka...'}" class="flex-grow p-2 text-lg border-none focus:outline-none placeholder-gray-500">
+                            <button class="bg-primary text-white p-2 rounded-button hover:bg-red-700 transition ml-2">
+                                <i class="ri-search-line"></i>
+                            </button>
+                            <div class="w-10 h-10 flex items-center justify-center text-gray-500 cursor-pointer ml-2 close-search">
+                                <i class="ri-close-line ri-lg hover:text-primary transition"></i>
+                            </div>
+                        </div>
+                        <div class="p-4 text-gray-500 text-sm">${isOsmanya ? '𐒙 𐒑𐒖𐒄𐒖𐒑𐒓𐒆𐒆𐒖 𐒑𐒖𐒔𐒖 𐒖𐒕 𐒏𐒖 𐒇𐒖𐒖𐒆𐒕 𐒏𐒖𐒕𐒈𐒖 𐒏𐒚 𐒈𐒖𐒇𐒖𐒇𐒏𐒛𐒆𐒖 𐒏𐒖𐒐𐒗.' : 'Ugu yaraan 3 xaraf waa inaad ku raadisaa kale.'}</div>
+                    </div>
+                `;
+                document.body.appendChild(searchBar);
+                
+                setTimeout(() => {
+                    searchBar.style.opacity = '1';
+                    searchBar.querySelector('input').focus();
+                }, 10);
+                
+                searchBar.querySelector('.close-search').addEventListener('click', closeSearch);
+                searchBar.addEventListener('click', function(e) {
+                    if (e.target === searchBar) {
+                        closeSearch();
+                    }
+                });
+            }
+
+            function closeSearch() {
+                if (searchBar) {
+                    searchBar.style.opacity = '0';
+                    setTimeout(() => {
+                        searchBar.remove();
+                        searchBar = null;
+                        searchOpen = false;
+                    }, 300); 
+                }
+            }
+
+            searchIcon.addEventListener('click', function() {
+                if (searchOpen) {
+                    closeSearch();
+                } else {
+                    createSearchBar();
+                    searchOpen = true;
+                }
+            });
+
+
+        // *** MOBILE MENU TOGGLE ***
+            const menuIcon = document.querySelector('.menu-toggle');
+            let menuOpen = false;
+            let mobileMenu = null;
+
+            menuIcon.addEventListener('click', function() {
+                if (menuOpen) return;
+                
+                menuOpen = true;
+                document.body.style.overflow = 'hidden'; 
+                
+                mobileMenu = document.createElement('div');
+                mobileMenu.className = 'fixed inset-0 bg-black/50 z-[60] transition-opacity duration-300 opacity-0';
+                mobileMenu.innerHTML = `
+                    <div class="w-64 h-full bg-white shadow-2xl animate-slide-right overflow-y-auto">
+                        <div class="p-4 border-b border-gray-200 flex items-center justify-between">
+                            <h2 class="text-2xl font-['Pacifico'] text-primary">
+                                <span class="osmanya-text-menu" data-latin="HORSEED">𐒔𐒙𐒇𐒈𐒜𐒆</span>
+                            </h2>
+                            <div class="w-10 h-10 flex items-center justify-center text-gray-500 cursor-pointer close-menu">
+                                <i class="ri-close-line ri-lg hover:text-primary transition"></i>
+                            </div>
+                        </div>
+                        <nav class="p-4">
+                            <ul class="space-y-4 font-semibold text-gray-800">
+                                <li><a href="#" class="block hover:text-primary transition">
+                                    <span class="osmanya-text-menu" data-latin="Warka">𐒓𐒖𐒇𐒖𐒇𐒏𐒖</span></a>
+                                </li>
+                                <li><a href="#" class="block hover:text-primary transition">
+                                    <span class="osmanya-text-menu" data-latin="Caafimaadka">𐒋𐒘𐒕𐒛𐒇𐒖𐒔𐒖</span></a>
+                                </li>
+                                <li><a href="#" class="block hover:text-primary transition">
+                                    <span class="osmanya-text-menu" data-latin="Dhaqaalaha">𐒊𐒖𐒎𐒛𐒐𐒖𐒔𐒖</span></a>
+                                </li>
+                                <li><a href="#" class="block hover:text-primary transition">
+                                    <span class="osmanya-text-menu" data-latin="Sportiga">𐒁𐒙𐒇𐒖𐒔𐒖</span></a>
+                                </li>
+                                <li><a href="#" class="block hover:text-primary transition">
+                                    <span class="osmanya-text-menu" data-latin="Tignoolajiyadda">𐒂𐒗𐒏𐒒𐒙𐒐𐒙𐒃𐒘𐒕𐒖𐒆𐒆𐒖</span></a>
+                                </li>
+                                <li><a href="#" class="block hover:text-primary transition">
+                                    <span class="osmanya-text-menu" data-latin="Bulshada">𐒁𐒚𐒐𐒉𐒖𐒆𐒖</span></a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="p-4 border-t mt-4">
+                            <p class="text-sm text-gray-500">
+                                <span class="osmanya-text-menu" data-latin="Nala soo xiriir:">𐒒𐒖𐒐𐒖 𐒈𐒙𐒋𐒙:</span>
+                            </p>
+                            <div class="flex space-x-3 text-xl text-gray-700 mt-2">
+                                <i class="ri-facebook-box-fill hover:text-primary cursor-pointer transition"></i>
+                                <i class="ri-twitter-fill hover:text-primary cursor-pointer transition"></i>
+                                <i class="ri-instagram-fill hover:text-primary cursor-pointer transition"></i>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(mobileMenu);
+                
+                setTimeout(() => {
+                    mobileMenu.style.opacity = '1';
+                }, 10);
+
+                // Hadduu script-ku beddelan yahay, beddel qoraalka menu-ga mobilka
+                if (!isOsmanya) {
+                    mobileMenu.querySelectorAll('.osmanya-text-menu').forEach(el => {
+                        el.textContent = el.getAttribute('data-latin');
+                    });
+                }
+
+                // Event Listeners for closing
+                if (mobileMenu) {
+                    mobileMenu.querySelector('.close-menu').addEventListener('click', closeMenu);
+                    mobileMenu.addEventListener('click', function(e) {
+                        if (e.target === mobileMenu) {
+                            closeMenu();
+                        }
+                    });
+                }
+            });
+            
+            function closeMenu() {
+                if (mobileMenu) {
+                    const sidebar = mobileMenu.querySelector('.animate-slide-right');
+                    sidebar.classList.remove('animate-slide-right');
+                    sidebar.classList.add('animate-slide-left');
+                    
+                    setTimeout(() => {
+                        mobileMenu.remove();
+                        document.body.style.overflow = '';
+                        menuOpen = false;
+                    }, 300);
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
